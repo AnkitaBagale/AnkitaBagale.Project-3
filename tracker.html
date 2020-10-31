@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Calories Tracker</title>
+        <meta name="description" content="I am a coder and learner. I am currently lerning Html, css, JS.">
+        <meta name="author" content="Ankita Bagale">
+        <link rel="shortcut icon" href="/Images/favicon2.icon" type="image/x-icon">
+
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> 
+        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        
+    
+        <script>
+            $(function(){
+                $("#header").load("header.html");
+            });
+        </script>
+        <script>
+            $(function(){
+                $("#footer").load("footer.html");
+            });
+        </script>
+
+        <link rel="stylesheet" href="trackerStyle.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    
+
+
+    <body>
+        <!-- header -->
+        <div id="header"> </div>
+
+        <div class="page-body">
+            <div class="pageTitle"><h1>Your Calory Log</h1></div>
+            <div class="totalCalory">
+                <h1 style="display: inline;">Total Calories Consumed:</h1>
+                <h1 style="display: inline;" class="totalCaloryCal">00</h1>
+            </div>
+
+        <form class="caloryEntry">
+            <div class="row">
+                  <!-- food name text field  -->
+                <div class="col">
+                    <div class="labels">
+                        <label for="foodName">Food Name</label><span class="required">*</span>
+                    </div>
+                    <div class="textbox">
+                        <input type="text" id="foodName" placeholder="Enter food name here" required>
+                    </div>
+                    <div class="errorMessage">
+                        <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter food name</h5>
+                    </div>
+                </div>
+                <!-- comment text field -->
+                <div class="col">
+                    <div class="labels">
+                        <label for="caloryIntake">Calory Intake</label><span class="required">*</span>
+                    </div>
+                    <div class="textbox">
+                        <input type="text" id="caloryIntake" placeholder="Enter calory intake in calory" required>
+                    </div>
+                    <div class="errorMessage">
+                        <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter calory intake</h5>
+                    </div>
+                </div>
+                <!-- submit button --> 
+                <div class="submitEntry">
+                    <button id="btn" type="submit">Add</button>
+                </div>
+            </div>
+             
+             
+        </form>
+
+        
+        <!-- Posted reviews area -->
+        <div class="listContainer">
+            <ul class="list">
+                <!-- <div class="row">
+                        <div class="col entry"><p>Pasta</p></div>
+                        <div class="col entry"><p>240</p></div>
+                        <div class="deleteButton"><i class="fas fa-trash-alt"></i></div>
+                </div>  -->
+            </ul>
+        </div>
+    
+
+        <!-- footer -->
+        <div id="footer"></div>
+    </div>
+        <!-- loading JS file -->
+        <script src="app.js"></script>
+    
+    </body>
+    
+
+
+</html>

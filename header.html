@@ -1,0 +1,50 @@
+<nav>
+    
+    <div class="logo">
+         <a href="/index.html"> <img src="/Images/logo.png" alt="Logo" width="46" height="46"> </a>
+     </div>
+     
+    <ul class="Nav-Links">
+        <li>
+            <a href="/index.html">About</a>
+        </li>
+        <li>
+            <a href="/tracker.html">Tracker</a>
+        </li>
+        <li>
+            <a href="/profile.html">Profile</a>
+        </li>    
+    </ul>
+    
+
+     <div class="Burger">  
+         <div class="line1"> </div>
+         <div class="line2"> </div>
+         <div class="line3"> </div>
+     </div>
+   
+   <script>
+         const navSlide = () =>{
+         const burger = document.querySelector('.Burger');
+         const nav=document.querySelector('.Nav-Links');
+         const navLinks=document.querySelectorAll('.Nav-Links li')
+         burger.addEventListener('click', ()=>{
+             //toggle menu
+             nav.classList.toggle('Nav-Active');
+             navLinks.forEach((link, index)=>{
+                 if (link.style.animation){
+                     link.style.animation='';
+                 }
+                 else{
+                 link.style.animation=`navLinksFade 0.5s ease forwards ${index*100+400}ms`;
+                 }
+             })
+             burger.classList.toggle('toggle');
+         })
+     }
+     navSlide();
+   
+   </script>  
+
+
+</nav>
