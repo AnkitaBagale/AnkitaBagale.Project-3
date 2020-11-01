@@ -5,8 +5,10 @@ var caloryIntake=document.querySelector('#caloryIntake');
 var addButton= document.querySelector('#btn');
 var lists=document.querySelector('.list');
 var totalCal=document.querySelector('.totalCaloryCal');
+
 //Event Listeners
 addButton.addEventListener('click', addEntry);
+lists.addEventListener('click', deleteEntry);
 
 //Functions
 function addEntry(event){
@@ -47,4 +49,13 @@ function addEntry(event){
     //clear input box values
     foodName.value="";
     caloryIntake.value="";
+}
+
+function deleteEntry(e){
+ console.log(e.target);
+ var item = e.target;
+ if(item.classList[0]=='deleteButton'){
+     var deleteRow = item.parentElement;
+     deleteRow.remove();
+ }
 }

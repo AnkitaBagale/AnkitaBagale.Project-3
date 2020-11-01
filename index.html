@@ -8,22 +8,19 @@
 
         <title>Calories Tracker</title>
         <meta name="description" content="I am a coder and learner. I am currently lerning Html, css, JS.">
-        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="shortcut icon" href="/Images/favicon2.icon" type="image/x-icon">
         <meta name="author" content="Ankita Bagale">
 
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> 
         
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
         
         <link rel="stylesheet" href="style.css" type="text/css">
-        
-        <script>
-            $(function(){
-                $("#header").load("header.html");
-            });
-        </script>
+        <link rel="stylesheet" href="aboutStyle.css" type="text/css">
+
         <script>
             $(function(){
                 $("#footer").load("footer.html");
@@ -37,10 +34,73 @@
     <body>
         <!-- header -->
         <div id="header"> </div>
-               
+        
+        
+        <div>
+            <h1 style="text-align: center; color:#278235; padding: 20px 0;">Please Enter your name and age to continue</h1>
+                <form class="infoForm">
+                                              
+                        <div class="inputCol">
+                            <input class="inputBox" type="text" id="name" placeholder="Enter your name" required>
+                            <div class="errorMessage">
+                            <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter name</h5>
+                            </div>
+                        </div>
+                        <div class="inputCol">
+                            <input class="inputBox" type="text" id="age" placeholder="Enter your age" required>
+                            <div class="errorMessage">
+                                <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter age</h5>
+                            </div>
+                        </div>
+                        
+                        <!-- submit button --> 
+                        <div class="submitInfo">
+                            <button id="btn2" type="submit" onclick="openTheSite(); return false;">Submit</button>
+                        </div>
+                    </div>        
+            </form>
 
+        </div>   
+        
         <!-- footer -->
         <div id="footer"></div>
+
+        <script>
+
+            function openTheSite(){
+
+                var name= document.querySelector('#name');
+                var age= document.querySelector('#age');
+                var message=document.querySelectorAll('.errorMessage');
+                
+                name.addEventListener('invalid', function(event){
+                    if(event.target.validity.valueMissing){
+                        event.preventDefault();
+                        //will display the error message if Name field is not filled
+                        message[0].style.display="block";
+                    }
+                });
+                name.addEventListener('change', function(event){
+                        //will display the error message if Name field is not filled
+                        message[0].style.display="none";
+                });
+                age.addEventListener('invalid', function(event){
+                    event.preventDefault();
+                    if(event.target.validity.valueMissing){
+                        //will display the error message if Name field is not filled
+                        message[1].style.display="block";
+                    }
+                });
+                age.addEventListener('change', function(event){
+                        //will display the error message if Name field is not filled
+                        message[1].style.display="none";
+                });
+
+                if(name.value && age.value){
+                location.href = "/tracker.html";
+                }
+            }
+        </script>
         
     </body>
     

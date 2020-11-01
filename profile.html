@@ -8,7 +8,7 @@
 
         <title>Calories Tracker</title>
         <meta name="description" content="I am a coder and learner. I am currently lerning Html, css, JS.">
-        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="shortcut icon" href="/Images/favicon2.icon" type="image/x-icon">
         <meta name="author" content="Ankita Bagale">
 
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
@@ -30,6 +30,53 @@
             });
         </script>
 
+        <style>
+            #logTable{
+                margin: 0 auto;
+                border-spacing: 10px;
+                table-layout: fixed;
+                width: 500px;
+            }
+            td{
+                padding: 10px;
+                background-color: lightgreen;
+                color: #278235;
+                text-align: center;
+                font-weight: bold;
+            }
+            th{
+                padding: 10px;
+                background-color: #278235;
+                color: white;
+            }
+            .analysis h5{
+                font-size: 22px;
+                color: #278235;
+                font-weight: 500;
+            }
+            .analysis{
+                width: 70%;
+                margin: 20px 20%;
+                padding: 20px;
+                border-style: double;
+                border-width: thick;
+                border-color: #278235;
+            }
+
+            @media screen and (max-width: 768px){
+                #logTable{
+                width: 100%;
+                border-spacing: 5px;
+            }
+            .analysis{
+                width: 100%;
+                margin: 20px 5px;
+            }
+            }
+
+
+        </style>
+
     </head>
     
 
@@ -38,6 +85,67 @@
         <!-- header -->
         <div id="header"> </div>
                
+
+        <div class="page-body">
+            <div class="analysis">
+                <div> <h5 style="display:inline">Hi, </h5>
+                      <h5 style="display:inline">Ankita</h5>
+                </div>
+                <br>
+                <div> <h5 style="display:inline">Your total calory consumption for today is </h5>
+                    <h5 style="display:inline">2200</h5>
+                </div>
+                <br>
+                <div> <h5 style="display:inline">Your goal(minimum requirement of your body) is </h5>
+                    <h5 style="display:inline">2400</h5>
+                </div>
+                <br>
+                <div> <h5>Incase you need to gain weight, you need to consume more calories than your goal.<h5>
+                    <h5>Incase you want to loose weight, you need to consume less calories than your goal.</h5>
+                </div>
+            </div>
+
+
+            <table id="logTable">
+                <tr>
+                  <th>Age(yrs)</th>
+                  <th>Daily Calorie Needs(cal)</th>
+                </tr>
+                <tr>
+                  <td>2-3</td>
+                  <td>1000</td>
+                </tr>
+                <tr>
+                  <td>4-8</td>
+                  <td>1400</td>
+                </tr>
+                <tr>
+                    <td>9-13</td>
+                    <td>1800</td>
+                </tr>
+                <tr>
+                    <td>14-18</td>
+                    <td>2400</td>
+                </tr>
+                <tr>
+                    <td>19-30</td>
+                    <td>2600</td>
+                </tr>
+                <tr>
+                    <td>31-50</td>
+                    <td>2400</td>
+                </tr>
+                <tr>
+                    <td>51 and older</td>
+                    <td>2200</td>
+                </tr>
+
+
+              </table>
+
+
+        </div>
+
 
         <!-- footer -->
         <div id="footer"></div>

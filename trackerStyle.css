@@ -58,7 +58,6 @@ font-weight: bold;
     height: 50px;
     font-size: 16px;
     line-height: 40px;
-    font-family: 'Open Sans', sans-serif;
     border: none;
     padding: 0 10px;
 }
@@ -85,30 +84,13 @@ font-weight: bold;
     border:2px solid lightgreen;
  }
 
- /* error message in form styling */
- 
-.errorMessage{
-    display: none;
-}
-.errorMessage h5{
-    text-align: left;
-    font-size: 16px;
-    margin-left: 10px;
-    font-family: 'Open Sans', sans-serif;
-    color: rgb(250, 62, 94);
-}
-.errorMessage ::before{
-    padding-right: 5px;
-    color:  rgb(250, 62, 94);
-}
- 
-
 /* posted reviews section styling */
 
 .deleteButton{
  width: 110px;
  cursor: pointer;
  color: #278235;
+ font-size: 22px;
 }
 .deleteButton :hover{
     color: lightgreen;
@@ -123,7 +105,11 @@ font-weight: bold;
     color:  white;
     padding-left: 10px;
 }
-    
+
+/* to debug the problem not able to click on icon */
+.fa-trash-alt{
+    pointer-events: none;
+}
 
  @media screen and (max-width:768px){
      .row{
@@ -141,10 +127,6 @@ font-weight: bold;
         margin-right: 0;
     }
 
-    .errorMessage h5{
-        margin-left: 0px;
-    }
-
     .pageTitle{
         font-size: 22px;
         line-height: 28px;
@@ -157,6 +139,6 @@ font-weight: bold;
     }
     .deleteButton{
         position: relative;
-        top: -145px;
+        top: -150px;
        }
  }
