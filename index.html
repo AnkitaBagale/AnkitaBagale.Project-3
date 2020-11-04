@@ -66,6 +66,9 @@
         <div id="footer"></div>
 
         <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                localStorage.clear();
+            });
 
             function openTheSite(){
                 var name= document.querySelector('#name');
