@@ -70,7 +70,7 @@
             }
             .analysis{
                 width: 100%;
-                margin: 20px 5px;
+                margin: 20px 0;
             }
             }
 
@@ -89,15 +89,15 @@
         <div class="page-body">
             <div class="analysis">
                 <div> <h5 style="display:inline">Hi, </h5>
-                      <h5 style="display:inline">Ankita</h5>
+                      <h5 class="userName" style="display:inline; font-weight: bold;"></h5>
                 </div>
                 <br>
                 <div> <h5 style="display:inline">Your total calory consumption for today is </h5>
-                    <h5 style="display:inline">2200</h5>
+                    <h5 style="display:inline; font-weight: bold;" class="totalCaloryCal"></h5>
                 </div>
                 <br>
                 <div> <h5 style="display:inline">Your goal(minimum requirement of your body) is </h5>
-                    <h5 style="display:inline">2400</h5>
+                    <h5 style="display:inline; font-weight: bold;" class="reqCal">2400</h5>
                 </div>
                 <br>
                 <div> <h5>Incase you need to gain weight, you need to consume more calories than your goal.<h5>
@@ -149,6 +149,7 @@
 
         <!-- footer -->
         <div id="footer"></div>
+        <script src="profile.js"></script>
         
     </body>
     

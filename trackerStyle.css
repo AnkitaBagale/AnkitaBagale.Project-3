@@ -4,14 +4,21 @@
 .pageTitle{
     color: #278235;
     font-size: 28px;
+    line-height: 32px;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
     /* background-color: rgb(144, 238, 144); */
 }
-.totalCalory{
-    color: #278235;
+.goToProfile{
     padding-left: 10px;
+    padding-top: 20px;
+}
+.goToProfile a{
+    color: #278235;
+}
+.goToProfile a:hover{
+    color: rgb(33, 156, 33);
 }
 
 .caloryEntry form{
@@ -61,7 +68,20 @@ font-weight: bold;
     border: none;
     padding: 0 10px;
 }
-
+.textbox input[type=number]{
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    line-height: 40px;
+    border: none;
+    padding: 0 10px;
+    appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
  .submitEntry{
      text-align: center;
@@ -122,6 +142,7 @@ font-weight: bold;
      
      .labels{
         margin: 0;
+        width: fit-content;
      }
      .textbox{
         margin-right: 0;
@@ -129,10 +150,15 @@ font-weight: bold;
 
     .pageTitle{
         font-size: 22px;
-        line-height: 28px;
+        line-height: 36px;
         padding-top: 40px;
+        margin: 0;
+        padding: 30px 10px 20px 10px;
     }
-
+    .totalCalory{
+        margin: 0;
+        padding: 5px;
+    }
     .entry{
         margin-top: 10px;
         margin-bottom: 10px;

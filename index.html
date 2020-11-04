@@ -19,7 +19,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
         
         <link rel="stylesheet" href="style.css" type="text/css">
-        <link rel="stylesheet" href="aboutStyle.css" type="text/css">
+        <link rel="stylesheet" href="loginPage.css" type="text/css">
 
         <script>
             $(function(){
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="inputCol">
-                            <input class="inputBox" type="text" id="age" placeholder="Enter your age" required>
+                            <input class="inputBox" type="number" id="age" placeholder="Enter your age" required>
                             <div class="errorMessage">
                                 <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter age</h5>
                             </div>
@@ -68,11 +68,9 @@
         <script>
 
             function openTheSite(){
-
                 var name= document.querySelector('#name');
                 var age= document.querySelector('#age');
                 var message=document.querySelectorAll('.errorMessage');
-                
                 name.addEventListener('invalid', function(event){
                     if(event.target.validity.valueMissing){
                         event.preventDefault();
@@ -97,8 +95,19 @@
                 });
 
                 if(name.value && age.value){
+                setNameAgeLocal(name.value, age.value);
                 location.href = "/tracker.html";
                 }
+            }
+
+            function setNameAgeLocal(name, age){
+                let nameAge;
+                if(localStorage.getItem('nameAge')===null){
+                    nameAge=[];
+                }
+                nameAge.push(name);
+                nameAge.push(age);
+                localStorage.setItem('nameAge', JSON.stringify(nameAge));
             }
         </script>
         

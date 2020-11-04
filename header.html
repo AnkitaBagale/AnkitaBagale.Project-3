@@ -1,7 +1,7 @@
 <nav>
     
     <div class="logo">
-         <a href="/about.html"> <img src="/Images/logo.png" alt="Logo" width="46" height="46"> </a>
+         <a href="/tracker.html"> <img src="/Images/logo.png" alt="Logo" width="46" height="46"> </a>
      </div>
      
     <ul class="Nav-Links">
@@ -13,6 +13,9 @@
         </li>
         <li>
             <a href="/about.html">About</a>
+        </li>
+        <li class="logOut">
+            <a href="/index.html">Log Out</a>
         </li>    
     </ul>
     
@@ -43,6 +46,12 @@
          })
      }
      navSlide();
+
+     var logOut = document.querySelector('.logOut');
+     logOut.addEventListener('click', function(){
+        localStorage.clear();
+        location.href = "/indexs.html";
+     })
    
    </script>  
 

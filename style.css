@@ -28,8 +28,7 @@ nav {
     position: fixed;
     top: 0;
     z-index: 100;
-    align-items: center;
-    
+    align-items: center;   
 }
 
 .Nav-Links{
@@ -82,10 +81,10 @@ justify-content: space-around;
     /* styling for navigation header in small device*/
     body{
         overflow-x: hidden;
-        
     }
     .page-body{
         margin-left:0px;
+        padding-top: 10vh;
     }
     .logo{
         position: absolute;
@@ -93,14 +92,15 @@ justify-content: space-around;
     }
     nav {
         display: flex;
-        justify-content: space-around;
         align-items: center;
-        min-height: 8vh;
+        justify-content: space-around;
+        height: 0px;
+        min-height: 8vh !important;
+        position: fixed;
+        top:0px;
         width: 100%;
-        background-color: #278235;
-        position: sticky;
-        top: 0;
         z-index: 100;
+        background-color: #278235;
     }    
     .Nav-Links{
         position: absolute;
@@ -129,7 +129,6 @@ justify-content: space-around;
     }
     .Nav-Active{
         transform: translateX(0%);
-        /* overflow-x: visible !important; */
     }
     @keyframes navLinksFade {
         from{ opacity: 0;
