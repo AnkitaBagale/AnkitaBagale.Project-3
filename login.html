@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Calory Meter</title>
+        <meta name="description" content="I am a coder and learner. I am currently lerning Html, css, JS.">
+        <link rel="shortcut icon" href="/Images/favicon2.icon" type="image/x-icon">
+        <meta name="author" content="Ankita Bagale">
+
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> 
+        
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="loginPage.css" type="text/css">
+
+    </head>
+    
+
+
+    <body>
+        
+        
+        <div>
+            <h1>Please Enter your name and age to continue</h1>
+                <form class="infoForm">
+                                              
+                        <div class="inputCol">
+                            <input class="inputBox" type="text" id="name" placeholder="Enter your name" required>
+                            <div class="errorMessage">
+                            <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter name</h5>
+                            </div>
+                        </div>
+                        <div class="inputCol">
+                            <input class="inputBox" type="number" id="age" placeholder="Enter your age" required>
+                            <div class="errorMessage">
+                                <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter age</h5>
+                            </div>
+                        </div>
+                        
+                        <!-- submit button --> 
+                        <div class="submitInfo">
+                            <button id="btn2" type="submit">Submit</button>
+                        </div>
+                    </div>        
+            </form>
+
+        </div>   
+        
+
+        <script>
+            var btn = document.querySelector('#btn2');
+            const name= document.getElementById('name');
+            const age= document.getElementById('age');
+            const message=document.querySelectorAll('.errorMessage');
+        
+            document.addEventListener('DOMContentLoaded', function(){
+                localStorage.clear();
+            });
+            name.addEventListener('click', function(){
+                    message[0].style.display="none";
+            });
+        
+            age.addEventListener('click', function(){
+                    message[1].style.display="none";
+            }); 
+            
+            
+            btn.addEventListener('click', openTheSite);
+
+            function openTheSite(e){
+                e.preventDefault(); 
+                name.addEventListener('invalid', showError(event, name.value, 0));
+                age.addEventListener('invalid', showError(event, age.value, 1));
+
+                if(name.value && age.value){
+                setNameAgeLocal(name.value, age.value);
+                location.href = "/tracker.html";
+                }
+            }
+
+            function showError(event, value, i){
+                if(!value)
+                message[i].style.display="block";
+            }
+            
+
+            
+            function setNameAgeLocal(name, age){
+                let nameAge;
+                if(localStorage.getItem('nameAge')===null){
+                    nameAge=[];
+                }
+                nameAge.push(name);
+                nameAge.push(age);
+                localStorage.setItem('nameAge', JSON.stringify(nameAge));
+            }
+        </script>
+        
+    </body>
+    
+
+
+</html>

@@ -12,99 +12,111 @@
         <meta name="author" content="Ankita Bagale">
 
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> 
         
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
         
         <link rel="stylesheet" href="style.css" type="text/css">
-        <link rel="stylesheet" href="loginPage.css" type="text/css">
+        
+        <style>
+            .aboutInfo{ 
+                color:#05608b;
+                padding: 40px;
+                background-image:linear-gradient(180deg, rgb(0, 168, 150, 0.9), rgb(0, 168, 150, 0.3));
+                border-radius: 20px; 
+            }
+            .aboutInfo h1{
+                text-align: center;
+                padding: 0px 10px 10px 10px;
+                font-size: 44px;
+            }
+            .aboutInfo h5{ 
+                text-align: center;
+                padding: 0 10px 10px;
+                font-size: 28px;
+            }
+            .aboutInfo p{
+                text-align: left;
+                font-size:18px;
+                font-weight: bold;
+            }
+            .aboutInfo ul{
+                text-align: left;
+                font-size:18px;
+                font-weight: bold;
+            }
+            .aboutInfo li{
+                padding: 12px 0px 0px;  
+            }
+            .center-center{
+                height: 100vh; 
+                width: 100%; 
+                display: flex; 
+                justify-content: center;
+                align-items: center;
+            }
+            .bulletin{
+                padding: 3px 8px 3px 10px;
+                background-color: rgb(5, 96, 139,0.8);
+                color: white;
+                border-radius: 50%;
+                margin-right: 4px ;
+            }
+            
+            .aboutInfo a{
+                color:#05608b;
+                border: none;
+                border-bottom: 2px solid;
+            }
+            .aboutInfo a:hover{
+                color: #028090;
+            }
+            @media screen and (max-width: 768px){
+                .center-center{
+                    margin-top: 10vh;
+                    height: fit-content;
+                }
+                .aboutInfo{
+                    padding: 20px 20px 30px 20px;
+                    border-radius: 0px;
+
+                }
+                .aboutInfo h1{
+                    font-size: 36px;
+                    padding: 0px 10px 10px;
+                }
+                .aboutInfo h5{
+                    font-size: 22px;
+                }
+            }
+        </style>
 
     </head>
     
 
 
     <body>
-        <!-- header -->
-        <div id="header"> </div>
         
-        
-        <div>
-            <h1>Please Enter your name and age to continue</h1>
-                <form class="infoForm">
-                                              
-                        <div class="inputCol">
-                            <input class="inputBox" type="text" id="name" placeholder="Enter your name" required>
-                            <div class="errorMessage">
-                            <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter name</h5>
-                            </div>
-                        </div>
-                        <div class="inputCol">
-                            <input class="inputBox" type="number" id="age" placeholder="Enter your age" required>
-                            <div class="errorMessage">
-                                <h5><i class="fa fa-exclamation-circle" aria-hidden="true"></i>Please enter age</h5>
-                            </div>
-                        </div>
-                        
-                        <!-- submit button --> 
-                        <div class="submitInfo">
-                            <button id="btn2" type="submit">Submit</button>
-                        </div>
-                    </div>        
-            </form>
+               
 
-        </div>   
-        
+        <div class="page-body">
+            <div class="center-center">
+            <div class="aboutInfo">
+                <h1>Calory Meter</h1>
+                <h5>Keep track of your daily calory intake</h5>
+                <p>People can keep a track of their calory intake for a day.<br>
+                Steps:</p>
+                <ul>
+                    <li><span class="bulletin">></span>Go To Tracker page</li>
+                    <li><span class="bulletin">></span>Enter Food Name and Calories</li>
+                    <li><span class="bulletin">></span>Go to the profile page to check total calories consumed</li>
+                    <li><span class="bulletin">></span><a href="/login.html">Let's Start</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
 
-        <script>
-            var btn = document.querySelector('#btn2');
-            const name= document.getElementById('name');
-            const age= document.getElementById('age');
-            const message=document.querySelectorAll('.errorMessage');
-        
-            document.addEventListener('DOMContentLoaded', function(){
-                localStorage.clear();
-            });
-            name.addEventListener('click', function(){
-                    message[0].style.display="none";
-            });
-        
-            age.addEventListener('click', function(){
-                    message[1].style.display="none";
-            }); 
-            
-            
-            btn.addEventListener('click', openTheSite);
-
-            function openTheSite(e){
-                e.preventDefault(); 
-                name.addEventListener('invalid', showError(event, name.value, 0));
-                age.addEventListener('invalid', showError(event, age.value, 1));
-
-                if(name.value && age.value){
-                setNameAgeLocal(name.value, age.value);
-                location.href = "/about.html";
-                }
-            }
-
-            function showError(event, value, i){
-                if(!value)
-                message[i].style.display="block";
-            }
-            
-
-            
-            function setNameAgeLocal(name, age){
-                let nameAge;
-                if(localStorage.getItem('nameAge')===null){
-                    nameAge=[];
-                }
-                nameAge.push(name);
-                nameAge.push(age);
-                localStorage.setItem('nameAge', JSON.stringify(nameAge));
-            }
-        </script>
         
     </body>
     
