@@ -34,9 +34,9 @@ input::-webkit-inner-spin-button {
     height: 35px;
     width: 200px;
     border: none;
-    color: #f0f3bd;
+    color: white;
     background-color: transparent;
-    border-bottom: 2px solid #f0f3bd;
+    border-bottom: 2px solid white;
 }
 
 .inputCol{
@@ -51,14 +51,14 @@ input::-webkit-inner-spin-button {
     font-weight: 700;
     padding: 12px 15px;
     color: #05608b;
-   background-color: #f0f3bd;
-    border:2px solid #f0f3bd;
+   background-color: white;
+    border:2px solid white;
     border-radius: 25px;
 }
 .submitInfo button:hover{
    color: #f0f3bd;
    background-color: #05608b;
-    border: 2px solid #f0f3bd;
+    border: 2px solid white;
 }
 
 
@@ -70,11 +70,11 @@ input::-webkit-inner-spin-button {
     padding-top: 5px;
     text-align: left;
     font-size: 14px;
-    color: #f0f3bd;
+    color: white;
 }
 .errorMessage ::before{
     padding-right: 5px;
     font-weight: lighter;
-    color:  #f0f3bd;
+    color:  white;
 
 }
