@@ -17,9 +17,11 @@ function addEntry(event){
     event.preventDefault();
     //to create below html structure
     var addObj={food: foodName.value, calory: caloryIntake.value};
+    
+    if(foodName.value && caloryIntake.value){
     saveLocalList(addObj);
     createStructure(addObj);
-
+    }
     //clear input box values
     foodName.value="";
     caloryIntake.value="";
