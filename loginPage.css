@@ -1,18 +1,24 @@
 
+h1{
+    text-align: center; 
+    color:#028090; 
+    padding: 50px 10px 20px;
+}
+
 .infoForm{
     width: 260px;
     margin: 20px auto;
     min-height: 230px;
-    background-color: #278235;
+    /* background-color: rgb(5, 96, 139, 0.8); */
+    background-image: linear-gradient(90deg, rgb(2, 128, 144, 0.9), rgb(2, 128, 144, 0.5));
+    border-radius: 20px;
     padding: 30px;
-
 }
 .inputBox input[type=text]{
     padding: 0 10px;
-    color:white
 }
 ::placeholder{
-    color: rgb(211, 210, 210);
+    color: #c2c2bd;
 }
 .inputBox input[type=number]{
 appearance: textfield;
@@ -28,9 +34,9 @@ input::-webkit-inner-spin-button {
     height: 35px;
     width: 200px;
     border: none;
-    color:white;
-    background-color: #278235;
-    border-bottom: 2px solid white;
+    color: #f0f3bd;
+    background-color: transparent;
+    border-bottom: 2px solid #f0f3bd;
 }
 
 .inputCol{
@@ -44,15 +50,15 @@ input::-webkit-inner-spin-button {
     font-size: 16px;
     font-weight: 700;
     padding: 12px 15px;
-    background-color: white;
-    border: 2px solid white;
+    color: #05608b;
+   background-color: #f0f3bd;
+    border:2px solid #f0f3bd;
     border-radius: 25px;
-    color: #278235;
 }
 .submitInfo button:hover{
-   color: lightgreen;
-   background-color: #278235;
-   border:2px solid lightgreen;
+   color: #f0f3bd;
+   background-color: #05608b;
+    border: 2px solid #f0f3bd;
 }
 
 
@@ -64,10 +70,11 @@ input::-webkit-inner-spin-button {
     padding-top: 5px;
     text-align: left;
     font-size: 14px;
-    color: lightgreen;
+    color: #f0f3bd;
 }
 .errorMessage ::before{
     padding-right: 5px;
-    color:  lightgreen;
+    font-weight: lighter;
+    color:  #f0f3bd;
 
 }

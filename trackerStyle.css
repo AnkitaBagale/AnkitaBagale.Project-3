@@ -2,23 +2,26 @@
 
 /* styling of fields */
 .pageTitle{
-    color: #278235;
-    font-size: 28px;
+    color: #028090;
     line-height: 32px;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
     /* background-color: rgb(144, 238, 144); */
 }
+.pageTitle h1{
+    font-size: 44px;
+}
 .goToProfile{
     padding-left: 10px;
     padding-top: 20px;
 }
+
 .goToProfile a{
-    color: #278235;
+    color: #028090;
 }
 .goToProfile a:hover{
-    color: rgb(33, 156, 33);
+    color: #00a896;
 }
 
 .caloryEntry form{
@@ -40,7 +43,8 @@
     top: 10px;
     text-align: left;
     left: 20px;
-    color: #278235;
+    color: #028090;
+    width: fit-content;
 }
 .col label{
 font-size: 14px;
@@ -52,16 +56,17 @@ background-color: white;
 .required{
 padding-right: 4px; 
 background-color: white;
-color: #278235;
+color: #028090;
 font-weight: bold;
 }
 .textbox{
     margin-right: 10px;
-    border:2px solid #278235;
-    border-bottom: 2px solid #278235;
+    border:2px solid #028090;
+    border-bottom: 2px solid #028090;
 }
 .textbox input[type=text]{
     width: 100%;
+    color: #05608b;
     height: 50px;
     font-size: 16px;
     line-height: 40px;
@@ -73,6 +78,7 @@ font-weight: bold;
     height: 50px;
     font-size: 16px;
     line-height: 40px;
+    color: #05608b;
     border: none;
     padding: 0 10px;
     appearance: textfield;
@@ -86,7 +92,6 @@ input::-webkit-inner-spin-button {
  .submitEntry{
      text-align: center;
      padding-top:20px;
-     background-color: transparent;
  }
  .submitEntry button{
      cursor: pointer;
@@ -94,14 +99,15 @@ input::-webkit-inner-spin-button {
      font-size: 16px;
      font-weight: 700;
      padding: 12px 15px;
-     color: white;
-     border: 2px solid white;
      border-radius: 25px;
-     background-color: #278235;
+     color: #05608b;
+     background-color: white;
+    border:2px solid #05608b;
  }
  .submitEntry button:hover{
-    color: lightgreen;
-    border:2px solid lightgreen;
+    color: #f0f3bd;
+   background-color: #05608b;
+    border: 2px solid #f0f3bd;
  }
 
 /* posted reviews section styling */
@@ -109,7 +115,7 @@ input::-webkit-inner-spin-button {
 .deleteButton{
  width: 110px;
  cursor: pointer;
- color: #278235;
+ color: #028090;
  font-size: 22px;
 }
 .deleteButton :hover{
@@ -120,10 +126,10 @@ input::-webkit-inner-spin-button {
     height: 50px;
     line-height: 50px;
     margin-right: 10px;
-    background-color: #278235;
     font-size: 16px;
-    color:  white;
+    color:  #f0f3bd;
     padding-left: 10px;
+    background-image: linear-gradient(90deg, rgb(2, 128, 144, 0.9), rgb(2, 128, 144, 0.5));
 }
 
 /* to debug the problem not able to click on icon */
@@ -142,18 +148,19 @@ input::-webkit-inner-spin-button {
      
      .labels{
         margin: 0;
-        width: fit-content;
      }
      .textbox{
         margin-right: 0;
     }
 
     .pageTitle{
-        font-size: 22px;
         line-height: 36px;
         padding-top: 40px;
         margin: 0;
         padding: 30px 10px 20px 10px;
+    }
+    .pageTitle h1{
+        font-size: 36px;
     }
     .totalCalory{
         margin: 0;

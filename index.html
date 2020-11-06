@@ -37,7 +37,7 @@
         
         
         <div>
-            <h1 style="text-align: center; color:#278235; padding: 20px 0;">Please Enter your name and age to continue</h1>
+            <h1>Please Enter your name and age to continue</h1>
                 <form class="infoForm">
                                               
                         <div class="inputCol">
@@ -55,7 +55,7 @@
                         
                         <!-- submit button --> 
                         <div class="submitInfo">
-                            <button id="btn2" type="submit" onclick="openTheSite(); return false;">Submit</button>
+                            <button id="btn2" type="submit">Submit</button>
                         </div>
                     </div>        
             </form>
@@ -66,36 +66,29 @@
         <div id="footer"></div>
 
         <script>
+            var btn = document.querySelector('#btn2');
+            const name= document.getElementById('name');
+            const age= document.getElementById('age');
+            const message=document.querySelectorAll('.errorMessage');
+        
             document.addEventListener('DOMContentLoaded', function(){
                 localStorage.clear();
             });
+            name.addEventListener('click', function(){
+                    message[0].style.display="none";
+            });
+        
+            age.addEventListener('click', function(){
+                    message[1].style.display="none";
+            }); 
+            
+            
+            btn.addEventListener('click', openTheSite);
 
-            function openTheSite(){
-                var name= document.querySelector('#name');
-                var age= document.querySelector('#age');
-                var message=document.querySelectorAll('.errorMessage');
-                name.addEventListener('invalid', function(event){
-                    if(event.target.validity.valueMissing){
-                        event.preventDefault();
-                        //will display the error message if Name field is not filled
-                        message[0].style.display="block";
-                    }
-                });
-                name.addEventListener('change', function(event){
-                        //will display the error message if Name field is not filled
-                        message[0].style.display="none";
-                });
-                age.addEventListener('invalid', function(event){
-                    event.preventDefault();
-                    if(event.target.validity.valueMissing){
-                        //will display the error message if Name field is not filled
-                        message[1].style.display="block";
-                    }
-                });
-                age.addEventListener('change', function(event){
-                        //will display the error message if Name field is not filled
-                        message[1].style.display="none";
-                });
+            function openTheSite(e){
+                e.preventDefault(); 
+                name.addEventListener('invalid', showError(event, name.value, 0));
+                age.addEventListener('invalid', showError(event, age.value, 1));
 
                 if(name.value && age.value){
                 setNameAgeLocal(name.value, age.value);
@@ -103,6 +96,13 @@
                 }
             }
 
+            function showError(event, value, i){
+                if(!value)
+                message[i].style.display="block";
+            }
+            
+
+            
             function setNameAgeLocal(name, age){
                 let nameAge;
                 if(localStorage.getItem('nameAge')===null){
