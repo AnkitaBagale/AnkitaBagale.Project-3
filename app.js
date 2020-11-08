@@ -4,17 +4,30 @@ var foodName= document.querySelector('#foodName');
 var caloryIntake=document.querySelector('#caloryIntake');
 var addButton= document.querySelector('#btn');
 var lists=document.querySelector('.list');
+const message=document.querySelectorAll('.error');
 
 
 //Event Listeners
 document.addEventListener('DOMContentLoaded', getList);
 addButton.addEventListener('click', addEntry);
 lists.addEventListener('click', deleteEntry);
+foodName.addEventListener('click', function(){
+    message[0].style.display="none";
+    message[1].style.display="none";
+});
+
+caloryIntake.addEventListener('click', function(){
+    message[0].style.display="none";
+    message[1].style.display="none";
+}); 
 
 //Functions
 function addEntry(event){
     //to prevent form from submitting
     event.preventDefault();
+    //errorMessage
+    showError(foodName.value, 0);
+    showError(foodName.value, 1);
     //to create below html structure
     var addObj={food: foodName.value, calory: caloryIntake.value};
     
@@ -26,8 +39,10 @@ function addEntry(event){
     foodName.value="";
     caloryIntake.value="";
 }
-
-
+function showError(value, i){
+    if(!value)
+    message[i].style.display="block";
+}
 
 function createStructure(data){
     //to create html structure to post the entries on the page

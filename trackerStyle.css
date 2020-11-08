@@ -33,7 +33,7 @@
 .row{
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: top;
     padding: 10px;
 }
 .col{
@@ -88,6 +88,21 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+.error{
+    display: none;
+}
+
+.error h5{
+    padding-top: 5px;
+    text-align: left;
+    font-size: 14px;
+    color: #05608b;
+}
+.error ::before{
+    padding-right: 5px;
+    font-weight: lighter;
+    color: #05608b;
 }
 
  .submitEntry{
