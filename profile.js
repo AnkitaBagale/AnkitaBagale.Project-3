@@ -22,7 +22,7 @@ function getReqCal(age){
     return 1800;
     if(age>=13 && age<19)
     return 2400;
-    if(age>=19 && age<30)
+    if(age>=19 && age<31)
     return 2600;
     if(age>=31 && age<51)
     return 2400;
