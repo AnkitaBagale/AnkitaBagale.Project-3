@@ -1,9 +1,9 @@
 
 
-var foodName= document.querySelector('#foodName');
-var caloryIntake=document.querySelector('#caloryIntake');
-var addButton= document.querySelector('#btn');
-var lists=document.querySelector('.list');
+const foodName= document.querySelector('#foodName');
+const caloryIntake=document.querySelector('#caloryIntake');
+const addButton= document.querySelector('#btn');
+const lists=document.querySelector('.list');
 const message=document.querySelectorAll('.error');
 
 
@@ -27,7 +27,7 @@ function addEntry(event){
     foodName.addEventListener('invalid', showError(event, foodName.value, 0));
     caloryIntake.addEventListener('invalid', showError(event, caloryIntake.value, 1));
     //to create below html structure
-    var addObj={food: foodName.value, calory: caloryIntake.value};
+    let addObj={food: foodName.value, calory: caloryIntake.value};
     
     if(foodName.value && caloryIntake.value){
     saveLocalList(addObj);
@@ -81,9 +81,9 @@ function createStructure(data){
 
 function deleteEntry(e){
  console.log(e.target);
- var item = e.target;
+ let item = e.target;
  if(item.classList[0]=='deleteButton'){
-     var deleteRow = item.parentElement;
+     let deleteRow = item.parentElement;
      deleteRow.remove();
      removeLocalEntry(deleteRow);
  }
@@ -126,7 +126,7 @@ function removeLocalEntry(entry){
         entries = JSON.parse(localStorage.getItem('entries'));
     }
     const listFood= entry.children[0].innerHTML;
-    var listIndex;
+    let listIndex;
     for(i=0; i<entries.length; i++){
         if(entries[i].food==listFood)
         listIndex=i;
