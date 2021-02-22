@@ -1,8 +1,8 @@
-var totalCal=document.querySelector('.totalCaloryCal');
-var reqCal=document.querySelector('.reqCal');
-var userName=document.querySelector('.userName');
-var name;
-var age = 0;
+const totalCal=document.querySelector('.totalCaloryCal');
+const reqCal=document.querySelector('.reqCal');
+const userName=document.querySelector('.userName');
+let name;
+let age = 0;
 
 document.addEventListener('DOMContentLoaded', calTotal);
 document.addEventListener('DOMContentLoaded', postNameReqCal);
@@ -32,7 +32,7 @@ function getReqCal(age){
 
 
 function calTotal(){
-    var total=0;
+    let total=0;
     let entries;
     if(localStorage.getItem('total')===null){
         total=0;
